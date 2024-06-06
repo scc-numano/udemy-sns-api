@@ -7,15 +7,15 @@ const cors = require("cors");
 
 require("dotenv").config;
 
-const PORT = 5000;
+const PORT = procsee.env.Port || 10000;
 
 app.use(cors());
 
 //expressの設定(json形式を使用する)
 app.use(express.json());
 
-app.use("/api/auth/", authRoute)
-app.use("/api/posts/", postsRoute)
-app.use("/api/users/", usersRoute)
+app.use("/api/auth/", authRoute);
+app.use("/api/posts/", postsRoute);
+app.use("/api/users/", usersRoute);
 
-app.listen(PORT, () => console.log('server is running on Port ${PORT}'));
+app.listen(PORT, () => console.log("server is running on Port ${PORT}"));
